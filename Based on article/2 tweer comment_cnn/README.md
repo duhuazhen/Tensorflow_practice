@@ -18,5 +18,5 @@ testdata.manual.2009.06.14.csv（74K）<br>
 卷积神经网络简介<br>
 讲的比较好的一些博客：https://www.zhihu.com/question/39022858<br>
    https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650728746&idx=1&sn=61e9cb824501ec7c505eb464e8317915&scene=0#wechat_redirect<br>
-   改变某个同学人生的网站：http://scs.ryerson.ca/~aharley/vis/conv/
-
+   改变某个同学人生的网站(cnn)：http://scs.ryerson.ca/~aharley/vis/conv/<br>
+  基于TensorFlow的神经网络演示:https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=35&networkShape=4,2,2&seed=0.89675&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=true&xSquared=true&ySquared=true&cosX=false&sinX=true&cosY=false&sinY=true&collectStats=false&problem=classification&initZero=false&hideText=false github地址：https://github.com/tensorflow/playground
