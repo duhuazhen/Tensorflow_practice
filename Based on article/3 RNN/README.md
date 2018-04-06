@@ -1,7 +1,7 @@
 # 使用Python实现神经网络
 <p> 神经网络/人工神经网络的洋文是Neural Network，这个计算模型在上世纪40年代就出现了，但是直到2011、2012年由于大数据和深度学习的兴起，神经网络才得到广泛应用。</p>
 参看wiki神经网络：https://en.wikipedia.org/wiki/Artificial_neural_network<br>
-## MNIST数据集简介<br>
+# MNIST数据集简介<br>
 当我们学习新的编程语言时，通常第一个程序就是打印输出著名的“Hello World!”。在深度学习中，MNIST数据集就相当于Hello World。
 
 MNIST是一个简单的计算机视觉数据集，它包含手写数字的图像集：<br>
