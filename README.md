@@ -1,4 +1,4 @@
-TensorFlow是谷歌2015年开源的一个深度学习库，到现在正好一年。和TensorFlow类似的库还有Caffe、Theano、MXNet、Torch。但是论火爆程度，TensorFlow当之无愧，短短一年就在Github就收获了4万+颗星，把前面几个库获得的star加起来也不敌TensorFlow。<br>
+[TensorFlow](https://github.com/tensorflow/tensorflow)是谷歌2015年开源的一个深度学习库，到现在正好一年。和TensorFlow类似的库还有Caffe、Theano、MXNet、Torch。但是论火爆程度，TensorFlow当之无愧，短短一年就在Github就收获了4万+颗星，把前面几个库获得的star加起来也不敌TensorFlow。<br>
 
 TensorFlow源代码：https://github.com/tensorflow/tensorflow<br>
 TensorFlow使用C++开发，并提供了Python等语言的封装。如命名一样，TensorFlow为张量从图一端流动到另一端的计算过程，可以把张量看作矩阵（矩阵rank为2，<br>
