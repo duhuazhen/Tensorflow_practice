@@ -11,3 +11,7 @@
 5 – the text of the tweet (Lyx is cool)<br>
 training.1600000.processed.noemoticon.csv（238M）<br>
 testdata.manual.2009.06.14.csv（74K）<br>
+1)使用data.py处理数据;<br>
+2)使用train.py训练数据并保存模型；<br>
+3)使用prediction.py预测模型；<br>
+4)使用cnn卷积神经网络训练。<br>
