@@ -15,6 +15,8 @@ testdata.manual.2009.06.14.csv（74K）<br>
 2)使用train.py训练数据并保存模型；<br>
 3)使用prediction.py预测模型；<br>
 4)使用cnn卷积神经网络训练。<br>
-####卷积神经网络简介
-
+卷积神经网络简介<br>
+讲的比较好的一些博客：https://www.zhihu.com/question/39022858<br>
+   https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650728746&idx=1&sn=61e9cb824501ec7c505eb464e8317915&scene=0#wechat_redirect
+   改变某个同学人生的网站：http://scs.ryerson.ca/~aharley/vis/conv/
 
