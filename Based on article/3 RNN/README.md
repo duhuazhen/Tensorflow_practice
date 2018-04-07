@@ -17,4 +17,16 @@ t10k-labels-idx1-ubyte     测试数据label</p><br>
 
 我们的任务是使用上面数据训练一个可以准确识别手写数字的神经网络模型。
  ![](https://github.com/duhuazhen/Tensorflow_practice/blob/master/Based%20on%20article/3%20RNN/picture/2.png)<br>
->>>>>>> origin/master
+```python
+import numpy as np
+import random
+ 
+class NeuralNet(object):
+ 
+    # 初始化神经网络，sizes是神经网络的层数和每层神经元个数
+    def __init__(self, sizes):
+        self.sizes_ = sizes
+        self.num_layers_ = len(sizes)  # 层数
+        self.w_ = [np.random.randn(y, x) for x, y in zip(sizes[:-1], sizes[1:])]  # w_、b_初始化为正态分布随机数
+        self.b_ = [np.random.randn(y, 1) for y in sizes[1:]] 
+```
