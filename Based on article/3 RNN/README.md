@@ -9,6 +9,7 @@
 
 MNIST是一个简单的计算机视觉数据集，它包含手写数字的图像集：<br>
  ![](https://github.com/duhuazhen/Tensorflow_practice/tree/master/Based%20on%20article/3%20RNN/picture/1.png)
+  ![1](https://github.com/duhuazhen/Tensorflow_practice/raw/master/Screenshots/1.jpg)<br>
   MNIST数据集下载地址: [Yann LeCun]http://yann.lecun.com/exdb/mnist/<br>
  <p> 数据集：<br>
 train-images-idx3-ubyte  训练数据图像  (60,000)<br>
