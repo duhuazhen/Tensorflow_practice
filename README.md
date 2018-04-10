@@ -10,7 +10,7 @@ https://github.com/deepmind<br>
  
 
 
-$$\sum_{i=1}^n a_i=0$$
+$$ \sum_{i=1}^n a_i=0 $$
 
 $$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
 
