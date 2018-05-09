@@ -21,11 +21,13 @@ def recurrent_neural_network(data):
 	layer = {'w_':tf.Variable(tf.random_normal([rnn_size, n_output_layer])), 'b_':tf.Variable(tf.random_normal([n_output_layer]))}
  
 	lstm_cell = tf.nn.rnn_cell.BasicLSTMCell(rnn_size)
- 
+
 	data = tf.transpose(data, [1,0,2])
 	data = tf.reshape(data, [-1, chunk_size])
-	data = tf.split(0, chunk_n, data)
-	outputs, status = tf.nn.rnn(lstm_cell, data, dtype=tf.float32)
+	data = tf.split(data, chunk_n, 0)
+	batch_size = 100
+	print(batch_size) 
+	outputs, status =  tf.contrib.rnn.static_rnn(lstm_cell, data, dtype=tf.float32)
  
 	ouput = tf.add(tf.matmul(outputs[-1], layer['w_']), layer['b_'])
  
@@ -33,16 +35,17 @@ def recurrent_neural_network(data):
  
 # 每次使用100条数据进行训练
 batch_size = 100
- 
+
 # 使用数据训练神经网络
 def train_neural_network(X, Y):
 	predict = recurrent_neural_network(X)
-	cost_func = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(predict, Y))
+	
+	cost_func = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=predict, labels=Y))
 	optimizer = tf.train.AdamOptimizer().minimize(cost_func)
  
 	epochs = 13
 	with tf.Session() as session:
-		session.run(tf.initialize_all_variables())
+		session.run(tf.global_variables_initializer())
 		epoch_loss = 0
 		for epoch in range(epochs):
 			for i in range( int(mnist.train.num_examples/batch_size) ):
