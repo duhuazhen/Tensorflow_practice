@@ -31,8 +31,8 @@ neg_file = 'neg.txt'
 def create_lexicon(pos_file, neg_file):
 	lex = []
 	# 读取文件
-	def process_file(f):
-		with open(pos_file, 'r') as f:
+	def process_file(txtfile):
+		with open(txtfile, 'r') as f:
 			lex = []
 			lines = f.readlines()
 			#print(lines)
@@ -67,7 +67,7 @@ def normalize_dataset(lex):
 	dataset = []
 	# lex:词汇表；review:评论；clf:评论对应的分类，[0,1]代表负面评论 [1,0]代表正面评论 
 	def string_to_vector(lex, review, clf):
-		words = word_tokenize(line.lower())
+		words = word_tokenize(review.lower())
 		lemmatizer = WordNetLemmatizer()
 		words = [lemmatizer.lemmatize(word) for word in words]
  
@@ -143,21 +143,21 @@ Y = tf.placeholder('float')
 # 使用数据训练神经网络
 def train_neural_network(X, Y):
 	predict = neural_network(X)
-	cost_func = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(predict, Y))
+	cost_func = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=predict, labels=Y))
 	# learning rate 默认 0.001 ，可在AdamOptimizer()中指定值，当然还有别的优化器，只需修改
 	#函数名字即可
 	optimizer = tf.train.AdamOptimizer().minimize(cost_func)  # learning rate 默认 0.001 
  
 	epochs = 13
 	with tf.Session() as session:
-		session.run(tf.initialize_all_variables())
+		session.run(tf.global_variables_initializer())
 		epoch_loss = 0
  
 		i = 0
 		#将训练数据随机化
 		random.shuffle(train_dataset)
-		train_x = dataset[:, 0]
-		train_y = dataset[:, 1]
+		train_x = train_dataset[:, 0]
+		train_y = train_dataset[:, 1]
 		for epoch in range(epochs):
 			while i < len(train_x):
 				start = i
