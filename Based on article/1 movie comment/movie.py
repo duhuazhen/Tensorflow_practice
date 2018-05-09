@@ -126,13 +126,14 @@ def neural_network(data):
 	layer_output_w_b = {'w_':tf.Variable(tf.random_normal([n_layer_2, n_output_layer])), 'b_':tf.Variable(tf.random_normal([n_output_layer]))}
  
 	# w·x+b
-	layer_1 = tf.add(tf.matmul(data,  ['w_']), layer_1_w_b['b_'])
+	layer_1 = tf.add(tf.matmul(data, layer_1_w_b['w_']), layer_1_w_b['b_'])
 	layer_1 = tf.nn.relu(layer_1)  # 激活函数
 	layer_2 = tf.add(tf.matmul(layer_1, layer_2_w_b['w_']), layer_2_w_b['b_'])
 	layer_2 = tf.nn.relu(layer_2 ) # 激活函数
 	layer_output = tf.add(tf.matmul(layer_2, layer_output_w_b['w_']), layer_output_w_b['b_'])
  
 	return layer_output
+ 
  
 # 每次使用50条数据进行训练
 batch_size = 50
@@ -151,14 +152,15 @@ def train_neural_network(X, Y):
 	epochs = 13
 	with tf.Session() as session:
 		session.run(tf.global_variables_initializer())
-		epoch_loss = 0
- 
-		i = 0
+
 		#将训练数据随机化
 		random.shuffle(train_dataset)
 		train_x = train_dataset[:, 0]
 		train_y = train_dataset[:, 1]
 		for epoch in range(epochs):
+			epoch_loss = 0
+ 
+			i = 0
 			while i < len(train_x):
 				start = i
 				end = i + batch_size
